@@ -19,6 +19,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.example.fitnesstraining.databaseauthprovider.CustomUserSetailService;
 import com.example.fitnesstraining.jwtfilter.JwtFilter;
@@ -41,6 +44,7 @@ public class UserConfiguration {
 			.anyRequest().permitAll()
 			)
 //		.formLogin(form -> form.permitAll().defaultSuccessUrl("/datas"))
+			.cors(cors -> cors.configurationSource(corsConfigurationSource()))
 			.csrf(csrf -> csrf.disable())
 			.sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 			.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
@@ -84,5 +88,19 @@ public DaoAuthenticationProvider authenticationProvider() {
 		return new ProviderManager(List.of(authenticationProvider()));
 	}
 
+@Bean
+
+
+public CorsConfigurationSource corsConfigurationSource() {
+    CorsConfiguration configuration = new CorsConfiguration();
+    configuration.addAllowedOrigin("http://localhost:3000"); // your React app
+    configuration.addAllowedMethod("*"); // GET, POST, PUT, DELETE, etc.
+    configuration.addAllowedHeader("*"); // Allow all headers
+    configuration.setAllowCredentials(true);
+
+    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    source.registerCorsConfiguration("/**", configuration);
+    return source;
+}
 	
 }
