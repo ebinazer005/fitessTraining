@@ -39,7 +39,7 @@ public class UserConfiguration {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		
 		http.authorizeHttpRequests(auth ->
-			auth.requestMatchers("/home").permitAll()
+			auth.requestMatchers("/home" , "/demo" ).permitAll()
 			.requestMatchers("/datas").authenticated()
 			.anyRequest().permitAll()
 			)
