@@ -43,7 +43,7 @@ public class UserController {
 		 
 	}
 	
-	@GetMapping("/UserLogin")
+	@PostMapping("/UserLogin")
 	public ResponseEntity<String> login (@RequestBody UserEntity user) {
 		return userservice.login(user);
 	}
