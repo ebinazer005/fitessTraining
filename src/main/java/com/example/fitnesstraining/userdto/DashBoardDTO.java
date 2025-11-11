@@ -15,10 +15,10 @@ public class DashBoardDTO {
 	    private String imageName;
 	    private String imageBase64;
 
-	    // ✅ Proper default constructor (no return type)
+	   
 	    public DashBoardDTO() {}
 
-	    // ✅ Proper parameterized constructor
+	    
 	    public DashBoardDTO(DashboardEntity entity) {
 	        this.id = entity.getId();
 	        this.name = entity.getName();
@@ -38,7 +38,7 @@ public class DashBoardDTO {
 	        }
 	    }
 
-	    // ✅ Getters and Setters
+
 	    public long getId() { return id; }
 	    public void setId(long id) { this.id = id; }
 
