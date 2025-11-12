@@ -1,0 +1,41 @@
+body{
+  margin: 0;
+  padding: 0;
+
+}
+a{
+  text-decoration: none;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  background: #333;
+  padding: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+ 
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  color: white;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.navbar li:hover {
+  background: #555;
+ 
+}
+.right-menu{
+  margin-right: 2%;
+  list-style: none;
+}
