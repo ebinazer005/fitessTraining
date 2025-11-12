@@ -1,0 +1,164 @@
+lang chain?
+	
+	-lang chain is open source ai framework
+	-using lang chain we can create a LLM powered application 
+	-we can using prebuild LLM components to build a  application 
+	 
+lang chain using scenario 
+	
+	user input------------> 
+	data retrieval from the external website or database---->
+	pass the retrieval data from the LLM 
+	generate the output 
+	 
+
+like this scenario we can use a lang chain **its a simple agent**
+
+
+lang graph?
+	
+	-it advanced version of lang chain with memory it can remember the name like that (lang chain won't) 
+	-it helps you build complex, multi-step AI workflows
+	
+	-what is multistep means 
+		-long chain working only on sequences like this 
+			-user input------------> 
+			-data retrieval from the external website or database---->
+			-pass the retrieval data from the LLM 
+			-generate the output
+
+	-but lang graph 
+			
+		-in lang graph search a data from multiple website and database parallel
+		-long chain search a data in single website a database at one time Building a single chain of steps
+
+
+
+
+
+long chain chat bot 
+----------------------
+
+			-we using "OLLAMA Runtime 
+			-OLLAMA is large language model"
+
+steps 
+	-install OLLAMA -->(model "llama2") -------->cmd ollama run llama2
+	-install langchain-commuity 
+	-install langchain_core 
+	-install streamlit
+
+	for install ---  pip install langchain-commuity
+	    		 pip install langchain-core
+			 pip install streamlit
+
+			
+
+
+from langchin_core.promts import ChatPromtTemplate       ---->the many template we going to create a chatbot so we import this template 
+
+from langchin_core.output.parsers import StrOutputParser        ------>some time it give a special character this package control the output format
+
+from langchin-commuity.llms import Ollama                -----> we useing ollama LLM 
+
+import streamlitas as st                                    -------->for creating a UI 
+
+ 
+	
+
+st.title("ebi's assistent")      			     ----->we give a title for this a bot 
+
+input_txt = st.text_input("please enter your queries here")  ------>its like place holder
+
+	
+prompt =  ChatPromtTemplate.from_messages(
+
+	[("system","you are a helpful AI assistant. your name is ebi's assistent"),
+
+	("user",user query:{query})
+	
+	])                                 ------->here we assig role's i assign a tow roles "system" ,"user"
+
+
+
+
+llm = Ollama(model ="llama2") ------>invoke llm model 
+output = StrOutputParser()   ------>output form
+
+chain = prompt| llm | output ------------>create chain 
+
+
+if input_txt :
+
+	st.write(chain.invoke({"query" : input_txt})) ---------->if user give input we assign that input to the chain  
+
+
+
+for run this project
+---------------------
+	-go the project path open the command prompt 
+	-streamlit run filename.py
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+langchin tools (as of now 7 tolls or components)
+
+	1)LLM model
+	2)prompt template
+	3)chain
+	4)RAG ----->retrieval augmented generative
+	5)memory
+	6)tool -------->for websearch
+	7)AI agent
+
+ 
+
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+ 
+ 
+	
+			
+	
+
+	 
+	
+	
