@@ -28,7 +28,8 @@ public class DashboardContent {
 	public List<DashboardEntity> fetchDashBoradContent(){
 		return dashBoardRepo.findAll();
 	}
-		
+	
+	
 	
 		
 	

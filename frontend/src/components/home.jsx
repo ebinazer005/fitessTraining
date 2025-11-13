@@ -6,7 +6,22 @@ const Home = () => {
     return ( <>
     <Navbar />
     <div className="home">
-       <Assistent /> 
+
+
+      <div className="home_card">    
+         <h1 className="home_title"><span>The Fitness </span> Journey <br /> Start here</h1>
+
+            <div className="flex-cards">
+               <div className="first-cart"><h1>kj</h1></div>
+               <div className="sec-cart"><h1>kj</h1></div>
+            </div>
+         
+         <div className="assistant_wrapper">
+            <Assistent />
+         </div>  
+         
+      </div>
+       
     </div>  
  </> );
 }
