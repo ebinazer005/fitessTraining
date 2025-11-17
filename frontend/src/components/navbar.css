@@ -10,7 +10,7 @@ a{
   display: flex;
   justify-content: space-between; 
   align-items: center;
-  background:   rgba(240, 234, 234, 0.952);
+  /* background:   rgba(240, 234, 234, 0.952); */
   position: fixed;
   padding: 0;
   top: 0;
